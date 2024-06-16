@@ -53,7 +53,8 @@ To install with Docker using [Laravel Sail](https://laravel.com/docs/10.x/sail),
 
 The main components of the application are:
 
-- `app/Http/Controllers/OrderController` - The controller responsible for handling order creation requests
+- `app/Http/Controllers/Api/V1/OrderController` - The controller responsible for handling order creation requests
+- `app/Http/Controllers/Api/ApiBaseController` - base class for apis to handle response 
 - `app/Http/Requests/StoreOrderRequest` - The request validation class for validating the order creation request
 - `app/Mail/LowIngredientStock` - The email notification sent to the ingredient merchant when an ingredient falls below a certain threshold
 - `app/Services/OrderService` - The service class that encapsulates the business logic for creating an order
