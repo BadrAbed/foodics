@@ -9,7 +9,7 @@ To install with Docker using [Laravel Sail](https://laravel.com/docs/10.x/sail),
 1. Clone the repository:
 
     ```
-    git clone git@github.com:kh-hossam/foodics.git
+    git clone https://github.com/BadrAbed/foodics.git
     cd foodics
     ```
 
