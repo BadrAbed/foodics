@@ -40,7 +40,7 @@ To install with Docker using [Laravel Sail](https://laravel.com/docs/10.x/sail),
 6. Run the database migrations and seed the database:
 
     ```
-     php artisan migrate --seed
+     php artisan db:seed
     ```
 
 7. Start the queue worker to process email notifications:
