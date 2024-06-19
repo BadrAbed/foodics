@@ -3,16 +3,12 @@
 namespace App\Mail;
 
 use App\Models\Ingredient;
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
 
-class LowIngredientStock extends Mailable implements ShouldQueue
+class LowIngredientStock extends Mailable
 {
-    use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
