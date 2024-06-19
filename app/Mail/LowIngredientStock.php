@@ -34,7 +34,10 @@ class LowIngredientStock extends Mailable
     {
         return new Content(
             view: 'emails.low_ingredient',
-            text: `hello {$this->ingredient->merchant->name}, we need to make order of {$this->ingredient->name}`,
+            with: [
+            'merchantName' => $this->ingredient->merchant->name,
+            'ingredientName' => $this->ingredient->name,
+        ],
         );
     }
 
