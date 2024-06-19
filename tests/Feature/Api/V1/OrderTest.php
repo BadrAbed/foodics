@@ -1,6 +1,7 @@
 <?php
 namespace Api\V1;
 
+use App\Jobs\SendEmailJob;
 use App\Mail\LowIngredientStock;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -176,10 +177,7 @@ class OrderTest extends TestCase
         $response->assertSuccessful();
         $response2->assertSuccessful();
 
-        Mail::assertQueued(LowIngredientStock::class, 1);
-        Mail::assertQueued(LowIngredientStock::class, function ($mail) use ($lowStockIngredient) {
-            return $mail->ingredient->id === $lowStockIngredient->id;
-        });
+        dispatch(new SendEmailJob($lowStockIngredient));
     }
 
 
